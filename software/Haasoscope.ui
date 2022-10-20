@@ -47,9 +47,9 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>610</y>
+         <y>650</y>
          <width>381</width>
-         <height>171</height>
+         <height>131</height>
         </rect>
        </property>
        <property name="font">
@@ -90,7 +90,7 @@
           <x>190</x>
           <y>30</y>
           <width>10</width>
-          <height>241</height>
+          <height>221</height>
          </rect>
         </property>
         <property name="minimumSize">
@@ -124,7 +124,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>320</y>
+          <y>330</y>
           <width>191</width>
           <height>10</height>
          </rect>
@@ -159,10 +159,10 @@
        <widget class="QLabel" name="label_2">
         <property name="geometry">
          <rect>
-          <x>60</x>
+          <x>50</x>
           <y>360</y>
-          <width>101</width>
-          <height>16</height>
+          <width>121</width>
+          <height>20</height>
          </rect>
         </property>
         <property name="font">
@@ -172,15 +172,15 @@
          </font>
         </property>
         <property name="text">
-         <string>Time base</string>
+         <string>ADC Speed</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_3">
         <property name="geometry">
          <rect>
-          <x>60</x>
-          <y>280</y>
-          <width>91</width>
+          <x>50</x>
+          <y>290</y>
+          <width>121</width>
           <height>31</height>
          </rect>
         </property>
@@ -191,13 +191,13 @@
          </font>
         </property>
         <property name="text">
-         <string>Trig time</string>
+         <string> ADC Window</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_4">
         <property name="geometry">
          <rect>
-          <x>160</x>
+          <x>180</x>
           <y>0</y>
           <width>81</width>
           <height>20</height>
@@ -210,7 +210,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Threshold</string>
+         <string>T/H 1</string>
         </property>
        </widget>
        <widget class="QPushButton" name="rollingButton">
@@ -285,9 +285,9 @@
        <widget class="QPushButton" name="timeslowButton">
         <property name="geometry">
          <rect>
-          <x>20</x>
+          <x>10</x>
           <y>410</y>
-          <width>91</width>
+          <width>101</width>
           <height>31</height>
          </rect>
         </property>
@@ -305,7 +305,7 @@
          <rect>
           <x>120</x>
           <y>410</y>
-          <width>91</width>
+          <width>101</width>
           <height>31</height>
          </rect>
         </property>
@@ -324,7 +324,7 @@
           <x>10</x>
           <y>110</y>
           <width>101</width>
-          <height>161</height>
+          <height>181</height>
          </rect>
         </property>
         <property name="font">
@@ -394,13 +394,14 @@
           <rect>
            <x>10</x>
            <y>130</y>
-           <width>51</width>
-           <height>22</height>
+           <width>61</width>
+           <height>41</height>
           </rect>
          </property>
          <property name="font">
           <font>
            <family>Arial</family>
+           <pointsize>10</pointsize>
           </font>
          </property>
          <property name="maximum">
@@ -413,8 +414,8 @@
         <widget class="QLabel" name="label_6">
          <property name="geometry">
           <rect>
-           <x>70</x>
-           <y>130</y>
+           <x>80</x>
+           <y>140</y>
            <width>31</width>
            <height>16</height>
           </rect>
@@ -456,7 +457,7 @@
           <x>210</x>
           <y>30</y>
           <width>10</width>
-          <height>241</height>
+          <height>221</height>
          </rect>
         </property>
         <property name="minimumSize">
@@ -492,19 +493,20 @@
        <widget class="QCheckBox" name="thresh2Check">
         <property name="geometry">
          <rect>
-          <x>120</x>
-          <y>240</y>
-          <width>70</width>
-          <height>17</height>
+          <x>170</x>
+          <y>260</y>
+          <width>61</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="font">
          <font>
           <family>Arial</family>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="text">
-         <string>Thresh2</string>
+         <string>T/H 2</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="timebaseBox">
@@ -529,14 +531,15 @@
         <property name="geometry">
          <rect>
           <x>120</x>
-          <y>140</y>
-          <width>51</width>
-          <height>22</height>
+          <y>130</y>
+          <width>61</width>
+          <height>41</height>
          </rect>
         </property>
         <property name="font">
          <font>
           <family>Arial</family>
+          <pointsize>10</pointsize>
          </font>
         </property>
         <property name="minimum">
@@ -553,7 +556,7 @@
         <property name="geometry">
          <rect>
           <x>120</x>
-          <y>120</y>
+          <y>110</y>
           <width>51</width>
           <height>20</height>
          </rect>
@@ -564,15 +567,15 @@
          </font>
         </property>
         <property name="text">
-         <string>N coin.</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;N coin.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_11">
         <property name="geometry">
          <rect>
           <x>120</x>
-          <y>180</y>
-          <width>51</width>
+          <y>190</y>
+          <width>61</width>
           <height>20</height>
          </rect>
         </property>
@@ -582,21 +585,22 @@
          </font>
         </property>
         <property name="text">
-         <string>Coin. time</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Coin. time&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
        <widget class="QSpinBox" name="cointimeBox">
         <property name="geometry">
          <rect>
           <x>120</x>
-          <y>200</y>
-          <width>51</width>
-          <height>22</height>
+          <y>210</y>
+          <width>61</width>
+          <height>41</height>
          </rect>
         </property>
         <property name="font">
          <font>
           <family>Arial</family>
+          <pointsize>10</pointsize>
          </font>
         </property>
         <property name="minimum">
@@ -616,7 +620,7 @@
          <x>170</x>
          <y>470</y>
          <width>111</width>
-         <height>131</height>
+         <height>161</height>
         </rect>
        </property>
        <property name="font">
@@ -670,7 +674,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>60</y>
+          <y>70</y>
           <width>70</width>
           <height>17</height>
          </rect>
@@ -688,7 +692,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>80</y>
+          <y>90</y>
           <width>91</width>
           <height>17</height>
          </rect>
@@ -706,7 +710,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>100</y>
+          <y>120</y>
           <width>81</width>
           <height>17</height>
          </rect>
@@ -727,7 +731,7 @@
          <x>290</x>
          <y>470</y>
          <width>111</width>
-         <height>131</height>
+         <height>161</height>
         </rect>
        </property>
        <property name="font">
@@ -780,30 +784,32 @@
        <widget class="QSpinBox" name="resampBox">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>100</y>
-          <width>42</width>
-          <height>22</height>
+          <x>20</x>
+          <y>110</y>
+          <width>81</width>
+          <height>41</height>
          </rect>
         </property>
         <property name="font">
          <font>
           <family>Arial</family>
+          <pointsize>12</pointsize>
          </font>
         </property>
        </widget>
        <widget class="QLabel" name="label_7">
         <property name="geometry">
          <rect>
-          <x>60</x>
-          <y>110</y>
-          <width>41</width>
+          <x>30</x>
+          <y>90</y>
+          <width>61</width>
           <height>16</height>
          </rect>
         </property>
         <property name="font">
          <font>
           <family>Arial</family>
+          <pointsize>10</pointsize>
          </font>
         </property>
         <property name="text">
@@ -842,14 +848,15 @@
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>520</y>
+         <y>530</y>
          <width>161</width>
-         <height>81</height>
+         <height>101</height>
         </rect>
        </property>
        <property name="font">
         <font>
          <family>Arial</family>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="title">
@@ -860,13 +867,14 @@
          <rect>
           <x>60</x>
           <y>20</y>
-          <width>51</width>
-          <height>21</height>
+          <width>81</width>
+          <height>41</height>
          </rect>
         </property>
         <property name="font">
          <font>
           <family>Arial</family>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="minimum">
@@ -879,8 +887,8 @@
        <widget class="QCheckBox" name="allslowchanCheck">
         <property name="geometry">
          <rect>
-          <x>120</x>
-          <y>20</y>
+          <x>100</x>
+          <y>70</y>
           <width>41</width>
           <height>17</height>
          </rect>
@@ -898,26 +906,27 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>20</y>
+          <y>30</y>
           <width>31</width>
-          <height>16</height>
+          <height>21</height>
          </rect>
         </property>
         <property name="font">
          <font>
           <family>Arial</family>
+          <pointsize>14</pointsize>
          </font>
         </property>
         <property name="text">
-         <string>Ch</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;CH&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
        <widget class="QCheckBox" name="slowchanonCheck">
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>50</y>
-          <width>121</width>
+          <y>70</y>
+          <width>81</width>
           <height>17</height>
          </rect>
         </property>
@@ -940,7 +949,7 @@
          <x>0</x>
          <y>0</y>
          <width>161</width>
-         <height>511</height>
+         <height>521</height>
         </rect>
        </property>
        <property name="font">
