@@ -191,7 +191,7 @@
          </font>
         </property>
         <property name="text">
-         <string> ADC Window</string>
+         <string>Trg. Position</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_4">
@@ -877,6 +877,9 @@
           <pointsize>12</pointsize>
          </font>
         </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
         <property name="minimum">
          <number>-1</number>
         </property>
@@ -993,6 +996,9 @@
           <family>Arial</family>
           <pointsize>14</pointsize>
          </font>
+        </property>
+        <property name="mouseTracking">
+         <bool>true</bool>
         </property>
         <property name="maximum">
          <number>255</number>
