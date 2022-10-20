@@ -702,6 +702,24 @@
          <string>Logic analyzer</string>
         </property>
        </widget>
+       <widget class="QCheckBox" name="minidisplayCheck">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>100</y>
+          <width>81</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>OLED Scr</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QGroupBox" name="channelgroupBox_2">
        <property name="geometry">
@@ -835,7 +853,7 @@
         </font>
        </property>
        <property name="title">
-        <string>Slow ADC channel options</string>
+        <string>Slow ADC Ch options</string>
        </property>
        <widget class="QSpinBox" name="slowchanBox">
         <property name="geometry">
@@ -879,10 +897,10 @@
        <widget class="QLabel" name="label_9">
         <property name="geometry">
          <rect>
-          <x>10</x>
+          <x>20</x>
           <y>20</y>
-          <width>47</width>
-          <height>13</height>
+          <width>31</width>
+          <height>16</height>
          </rect>
         </property>
         <property name="font">
@@ -891,7 +909,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Channel</string>
+         <string>Ch</string>
         </property>
        </widget>
        <widget class="QCheckBox" name="slowchanonCheck">
@@ -920,9 +938,9 @@
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>10</y>
+         <y>0</y>
          <width>161</width>
-         <height>501</height>
+         <height>511</height>
         </rect>
        </property>
        <property name="font">
@@ -938,7 +956,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>420</y>
+          <y>490</y>
           <width>91</width>
           <height>17</height>
          </rect>
@@ -1008,29 +1026,11 @@
          <string>CH</string>
         </property>
        </widget>
-       <widget class="QCheckBox" name="minidisplayCheck">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>400</y>
-          <width>121</width>
-          <height>17</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Arial</family>
-         </font>
-        </property>
-        <property name="text">
-         <string>Show on mini-screen</string>
-        </property>
-       </widget>
        <widget class="QCheckBox" name="acdcCheck">
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>300</y>
+          <y>310</y>
           <width>121</width>
           <height>17</height>
          </rect>
@@ -1056,7 +1056,7 @@
           <x>10</x>
           <y>270</y>
           <width>121</width>
-          <height>17</height>
+          <height>21</height>
          </rect>
         </property>
         <property name="font">
@@ -1065,7 +1065,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Supergain 100X</string>
+         <string>Gain 100X</string>
         </property>
         <property name="checkable">
          <bool>true</bool>
@@ -1078,7 +1078,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>320</y>
+          <y>330</y>
           <width>121</width>
           <height>17</height>
          </rect>
@@ -1159,7 +1159,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>350</y>
+          <y>370</y>
           <width>121</width>
           <height>17</height>
          </rect>
@@ -1170,7 +1170,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Oversampling</string>
+         <string>Oversampling 1X</string>
         </property>
         <property name="checked">
          <bool>false</bool>
@@ -1298,7 +1298,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>370</y>
+          <y>390</y>
           <width>121</width>
           <height>17</height>
          </rect>
@@ -1309,7 +1309,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Super sampling</string>
+         <string>Oversampling 2X</string>
         </property>
         <property name="checked">
          <bool>false</bool>
@@ -1319,7 +1319,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>460</y>
+          <y>430</y>
           <width>91</width>
           <height>17</height>
          </rect>
@@ -1337,7 +1337,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>480</y>
+          <y>450</y>
           <width>91</width>
           <height>17</height>
          </rect>
