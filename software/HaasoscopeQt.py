@@ -6,6 +6,11 @@ pyqtgraph widget with UI template created with Qt Designer
 import numpy as np
 import sys, time
 from serial import SerialException
+
+import importlib
+from PyQt5 import QtWidgets
+
+
 import pyqtgraph as pg
 from pyqtgraph.Qt import QtCore, QtWidgets, QtGui, loadUiType
 import h5py
@@ -669,7 +674,7 @@ class MainWindow(TemplateBaseClass):
                     self.decodelabels.append(label)
                     item=item+1
             else:
-                print("can't decode when downsample is <0... go slower!")
+                print("Error , downsample is <0 ")
         now = time.time()
         dt = now - self.lastTime + 0.00001
         self.lastTime = now
@@ -724,7 +729,7 @@ class MainWindow(TemplateBaseClass):
         else:
             try: status=d.getchannels()
             except SerialException:
-                print("Serial exception getting channels!!")
+                print("Serial exception getting channels.")
                 sys.exit(1)
             if status==2: self.selectchannel() #we updated the switch data
             if self.savetofile: self.dosavetofile()
@@ -778,11 +783,11 @@ if __name__ == '__main__':
                     print("slowadc_ram_width set to", HaasoscopeLibQt.slowadc_ram_width)
             elif a[1:4] == "adc": #eg: -adc[(0,110),(0,118)]
                 exec("HaasoscopeLibQt.max10adcchans=" + a[4:])
-                print("max10adcchans set to", HaasoscopeLibQt.max10adcchans)
+                print("max10 adc chans set to", HaasoscopeLibQt.max10adcchans)
             elif a[1] == "r": #eg: -r12
                 ram_width = int(a[2:])
                 if ram_width > HaasoscopeLibQt.max_ram_width:
-                    print("ram_width", ram_width, "is bigger than the max allowed", HaasoscopeLibQt.max_ram_width)
+                    print("ram_width", ram_width, "is bigger than the max ", HaasoscopeLibQt.max_ram_width)
                     HaasoscopeLibQt.ram_width = HaasoscopeLibQt.max_ram_width
                 elif ram_width < 1:
                     print("ram_width", ram_width, "is less than 1")
@@ -800,26 +805,25 @@ if __name__ == '__main__':
     trigboardport = ""
     for a in sys.argv:
         if a[0] == "-":
-            #print(a)
             if a[1:3] == "mt":
                 d.domt=True
                 print("domt set to",d.domt)
             elif a[1:8] == "fastusb":
                 d.dofastusb = True
                 d.dousbparallel = True
-                print("dofastusb", d.dofastusb, "and dousbparallel", d.dousbparallel)
+                print("do fast usb", d.dofastusb, "and do usb parallel", d.dousbparallel)
             elif a[1] == "s" and a[2]!="r":
                 d.serialdelaytimerwait = int(a[2:])
-                print("serialdelaytimerwait set to", d.serialdelaytimerwait)
+                print("[serial delay timer wait] set to", d.serialdelaytimerwait)
             elif a[1] == "p":
                 d.serport = a[2:]
-                print("serial port manually set to", d.serport)
+                print("[serial port manually] set to", d.serport)
             elif a[1] == "t":
                 trigboardport = a[2:]
-                print("trigboardport set to", trigboardport)
+                print("[trig board port] set to", trigboardport)
 
     if d.domt and not d.dofastusb:
-        print("mt option is only for fastusb - exiting!")
+        print("Error , mt option is only for fastusb - exit.")
         sys.exit()
 
     # can change some things after initialization
@@ -830,31 +834,35 @@ if __name__ == '__main__':
     # d.togglelogicanalyzer() # run the logic analyzer
     # d.sendi2c("21 13 f0") # set extra pins E24 B0,1,2,3 off and B4,5,6,7 on (works for v8 only)
 
-    app = QtWidgets.QApplication.instance() #bug fix for PC Win10, pyqt5 , python 3.10 
+
+     
+  
+    app = QtWidgets.QApplication.instance()
+   
     standalone = app is None
     if standalone:
-        app = QtWidgets.QApplication(sys.argv) #bug fix for PC Win10, pyqt5 , python 3.10 
+         app = QtWidgets.QApplication(sys.argv)
 
     try:
         font = app.font();
         font.setPixelSize(11);
         app.setFont(font);
         win = MainWindow()
-        win.setWindowTitle('Haasoscope Qt')
+        win.setWindowTitle('Haaso_scope Qt')
         if not d.setup_connections():
-            print("Exiting now - failed setup_connections!")
+            print("Error- failed setup_connections.")
             sys.exit()
         if trigboardport!="":
             if trigboardport=="auto": trigboardport=d.trigserport
             trigboard = HaasoscopeTrigLibQt.HaasoscopeTrig()
             trigboard.construct(trigboardport)
             if not trigboard.get_firmware_version():
-                print("couldn't get trigboard firmware version - exiting!")
+                print("Error , couldn't get trigboard firmware version.")
                 sys.exit()
             trigboard.setrngseed()
             trigboard.set_prescale(1.0)
         if not d.init():
-            print("Exiting now - failed init!")
+            print("Error , Failed init. Exit.")
             d.cleanup()
             sys.exit()
         win.launch()
@@ -866,10 +874,12 @@ if __name__ == '__main__':
         win.triggerposchanged(128)  # center the trigger
         win.dostartstop()
     except SerialException:
-        print("serial com failed!")
+        print("Error , Serial com failed.")
 
     if standalone:
         rv=app.exec_()
         sys.exit(rv)
     else:
-        print("Done, but Qt window still active")
+        print("OK , Goto Qt window.")
+    
+    
