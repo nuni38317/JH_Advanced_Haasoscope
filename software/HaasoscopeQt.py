@@ -822,6 +822,9 @@ if __name__ == '__main__':
                 trigboardport = a[2:]
                 print("[trig board port] set to", trigboardport)
 
+    d.dofastusb = True        #FT232H not recognized automatically by program,  Force to use it
+    d.dousbparallel = True  #FT232H not recognized automatically by program,  Force to use it
+                
     if d.domt and not d.dofastusb:
         print("Error , mt option is only for fastusb - exit.")
         sys.exit()
