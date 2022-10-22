@@ -1,0 +1,16 @@
+
+# Key
+*.jks
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Gradle
+build/
+.gradle
+
+.idea/workspace.xml
+.idea/caches/*
+.idea/misc.xml
+android.iml
+
