@@ -15,6 +15,8 @@ import pyqtgraph as pg
 from pyqtgraph.Qt import QtCore, QtWidgets, QtGui, loadUiType
 import h5py
 
+from numba import jit
+
 # Define fft window class from template
 FFTWindowTemplate, FFTTemplateBaseClass = loadUiType("HaasoscopeFFT.ui")
 class FFTWindow(FFTTemplateBaseClass):
@@ -60,6 +62,7 @@ class MainWindow(TemplateBaseClass):
         self.ui.verticalSlider2.valueChanged.connect(self.triggerlevel2changed)
         self.ui.thresh2Check.clicked.connect(self.thresh2)
         self.ui.horizontalSlider.valueChanged.connect(self.triggerposchanged)
+        self.ui.horizontalSlider2.valueChanged.connect(self.ad_speed_changed) # ADD slider for AD_SPEED change
         self.ui.rollingButton.clicked.connect(self.rolling)
         self.ui.singleButton.clicked.connect(self.single)
         self.ui.timeslowButton.clicked.connect(self.timeslow)
@@ -414,6 +417,13 @@ class MainWindow(TemplateBaseClass):
     def single(self):
         d.getone = not d.getone
         self.ui.singleButton.setChecked(d.getone)
+
+    def ad_speed_changed(self,value): # ADD slider for AD_SPEED change
+        amount=1
+        if value>18 or value<-8: return
+        d.downsample=value
+        d.telldownsample(value)
+        self.timechanged()
         
     def timefast(self):
         amount=1
@@ -437,7 +447,10 @@ class MainWindow(TemplateBaseClass):
         self.ui.plot.setLabel('bottom', d.xlabel)
         self.ui.plot.setLabel('left', d.ylabel)
         self.triggerposchanged(self.ui.horizontalSlider.value())
-        self.ui.timebaseBox.setText("downsample "+str(d.downsample))
+        self.ui.timebaseBox.setText("S:"+str(d.downsample)) #downsample <=S
+        self.ui.horizontalSlider2.setValue(d.downsample)  # ADD slider for AD_SPEED change
+      
+
         
     def risingfalling(self):
         d.fallingedge=not self.ui.risingedgeCheck.checkState()
@@ -504,10 +517,10 @@ class MainWindow(TemplateBaseClass):
                 maxchan=li-HaasoscopeLibQt.num_chan_per_board*HaasoscopeLibQt.num_board
                 if maxchan>=0: # these are the slow ADC channels
                     self.ui.slowchanBox.setValue(maxchan)
-                    #print "selected slow curve", maxchan
+                    print ("selected slow curve", maxchan)
                 else:
                     self.ui.chanBox.setValue(li)
-                    #print "selected curve", li
+                    print ("selected curve", li)
                     modifiers = app.keyboardModifiers()
                     if modifiers == QtCore.Qt.ShiftModifier:
                         self.ui.trigchanonCheck.toggle()

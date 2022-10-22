@@ -13,7 +13,8 @@ rem | s: serial delay wait (default 100)
 rem | b: number of Haasoscope boards (default 1)
 rem =================================================================================
 rem
-python3.10 haasoscopeqt.py  -s150
+python3.10 haasoscopeqt.py  
+rem -s150
 rem
 rem ========= Program End. =============
 
