@@ -15,7 +15,7 @@ import pyqtgraph as pg
 from pyqtgraph.Qt import QtCore, QtWidgets, QtGui, loadUiType
 import h5py
 
-from numba import jit
+#from numba import jit
 
 # Define fft window class from template
 FFTWindowTemplate, FFTTemplateBaseClass = loadUiType("HaasoscopeFFT.ui")
