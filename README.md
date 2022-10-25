@@ -2,4 +2,4 @@
 
 Forked from drandyhaas/Haasoscope  https://github.com/drandyhaas/Haasoscope
 
-Our Purpose is Add External RAM , DDS(Direct Digital Synthersizer) Hardware B/D to Haasoscope V9 and Make Faster,Reliable and User friendly software
+I think this highspeed DAQ EVM B/D is not an oscilloscope but astro physics particle analyzer sensor DAQ B/D .
